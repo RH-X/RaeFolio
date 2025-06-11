@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rae McGee – UX Designer, Researcher, and Human Experiences Advocate" />
+  <title>Rae McGee</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Nunito:wght@300&display=swap">
+  <style>
+    /* Splash */
+    .splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #fffbea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgb(79, 70, 229);
+    }
+
+    .splash.hidden {
+      display: none;
+    }
+
+    /* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.main-content.slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* Hide by default */
+.main-content.hidden {
+  display: none;
+}
+
+
+    /* Body & Layout */
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #fffbea;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    header, section, footer {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: #008080;
+      text-align: center;
+    }
+
+    .main-heading {
+      text-align: center;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      color: #008080;
+    }
+
+    .subheading {
+      text-align: center;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Bio Card Layout */
+    .bio-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .bio-text {
+      flex: 1 1 55%;
+      font-size: 1rem;
+    }
+
+    .bio-image {
+      flex: 1 1 35%;
+    }
+
+    .bio-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Resume */
+    .resume-embed {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 1rem;
+    }
+
+    .resume-container {
+  max-width: 900px;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.resume-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resume-download-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+   .cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(79, 70, 229);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+
+    .center-button {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+   .floating-cta {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 66%; /* 2/3 width of container */
+  max-width: 600px; /* optional max for large screens */
+  text-align: center;
+}
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .link-section {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .link-section a {
+      margin: 0 1rem;
+      color: #008080;
+      text-decoration: none;
+    }
+
+    .logo-tag {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.2rem;
+      color: rgb(79, 70, 229);
+      font-weight: 600;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .resume-image-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.resume-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  color: #008080;
+  margin-bottom: 0.5rem;
+}
+
+.resume-download-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+    @media (max-width: 768px) {
+      .bio-card {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div class="splash" id="splash">Learn more about Rae!</div>
+
+<div id="mainContent" class="main-content hidden">
+
+  <header>
+    <div class="main-heading">Meet RAE MCGEE in 1.5 Minutes</div>
+    <div class="subheading">I love facilitating imperfection toward the products people wish existed.</div>
+    <div class="video-container">
+      <iframe src="https://www.loom.com/embed/b1b12071fe58404da059a009c45f663f?sid=a04e9dec-f5e4-4ae7-8ddd-842bf2da8f61" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </header>
+
+  <section>
+    <h2>About Rae</h2>
+    <div class="bio-card">
+      <div class="bio-text">
+        <h3>Bio</h3>
+        <p>With a genuine love for helping people, Rae (they/them) centers creating accessible information and assets that drive high learnability and engagement from the classroom to the software product space. Both an empath and a strong leader, Rae is naturally motivated to be your best user advocate when it comes to appealing to the highest values of a target market. Rae also brings with them pedagogy coursework and professional experience, is a graduate of Launchcode's full stack Python web development bootcamp, loves to get curious and keeps up on courses in UX that give you an edge in working with your product. Having a working knowledge from end to end of the software development lifecycle makes Rae a great pick for times you need to rely on someone to fly solo and problem solve.</p>
+      <br><br>
+    Explore my portfolio <a href="https://www.shorturl.at/697jR" target="_blank" style="color: #008080; text-decoration: none;">here</a>.
+      </div>
+      <div class="bio-image">
+        <img src="rae-profile.png" alt="Rae McGee photo">
+      </div>
+    </div>
+  </section>
+
+<section>
+  <h2>Resume</h2>
+  <div class="resume-image-container">
+    <img src="Rae-Product-Design-copy.png" alt="Rae McGee Resume" class="resume-image">
+  </div>
+  <div class="resume-download-container">
+    <a class="cta-button" href="Rae-Product-Design-copy.png" download="Rae-Product-Design-copy.png">Download Resume</a>
+  </div>
+</section>
+
+  <section>
+    <h2>Contact & Links</h2>
+    <div class="link-section">
+      <a href="https://www.linkedin.com/in/rae-mcgee/" target="_blank">LinkedIn -</a>
+      <span id="email-copy" style="cursor: pointer; color: #008080;">
+  raehuman.x@gmail.com 
+  📋
+</span>
+<span id="copy-confirmation" style="display:none; color: green; font-size: 0.9rem;">Copied!</span>
+
+    </div>
+  </section>
+
+  <div class="logo-tag">RHX</div>
+
+  <footer class="footer">
+    <p>Made with care by Rae McGee</p>
+  </footer>
+
+  <a class="cta-button floating-cta" href="https://calendly.com/raehuman-x/30min" target="_blank">Meet With Rae</a>
+</div>
+ <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const splash = document.getElementById("splash");
+    const mainContent = document.getElementById("mainContent");
+    const text = "Learn more about Rae!";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        splash.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      } else {
+        setTimeout(() => {
+          splash.classList.add("hidden");
+          mainContent.classList.remove("hidden");
+          mainContent.classList.add("slide-in");
+        }, 800);
+      }
+    }
+
+    splash.textContent = "";
+    typeWriter();
+  });
+</script>
+
+<script>
+  const emailCopy = document.getElementById('email-copy');
+  const confirmation = document.getElementById('copy-confirmation');
+
+  emailCopy.addEventListener('click', () => {
+    navigator.clipboard.writeText("raehuman.x@gmail.com").then(() => {
+      confirmation.style.display = 'inline';
+      setTimeout(() => {
+        confirmation.style.display = 'none';
+      }, 2000); // Hide after 2 seconds
+    });
+  });
+</script>
+</body>
+</html>
